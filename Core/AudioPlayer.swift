@@ -120,14 +120,12 @@ public class PAudioPlayer: NSObject {
     
     /// Current playback progress in seconds
     public var currentPlaybackProgress: Double {
-        let positionAndTime = sfbPlayer.playerNode.playbackPositionAndTime
-        return positionAndTime.time.currentTime
+        sfbPlayer.currentTime ?? 0
     }
     
     /// Total duration of current file in seconds
     public var duration: Double {
-        let positionAndTime = sfbPlayer.playerNode.playbackPositionAndTime
-        return positionAndTime.time.totalTime
+        sfbPlayer.totalTime ?? 0
     }
     
     /// Legacy property name for backwards compatibility
